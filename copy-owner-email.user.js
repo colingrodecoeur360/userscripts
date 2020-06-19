@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name Copy Owner Mail
-// @version 0.2
+// @version 0.3
 // @description Copy the first result's owner mail to the clipboard when searching companies with the webext
 // @include https://tools.360learning.com/api/webext/companies/search/*
 // @include https://tools.360mooc.com*/api/webext/companies/search/*
@@ -21,7 +21,7 @@
 function displayNotification(message) {
     const container = document.createElement("div");
     container.innerHTML = message;
-    document.querySelector("pre").appendChild(container);
+    document.querySelector("body").appendChild(container);
 
     Object.assign(container.style, {
         position: "fixed",
