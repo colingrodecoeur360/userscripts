@@ -2,7 +2,7 @@
 
 Install [Tampermonkey](https://www.tampermonkey.net/) on your favorite browser.
 
-### `github-pr-tag-relevant-user`
+### `github-tag-relevant-user`
 
 [Source](https://github.com/colingrodecoeur360/userscripts/blob/master/github-tag-relevant-user.user.js) | [Direct install](https://raw.githubusercontent.com/colingrodecoeur360/userscripts/master/github-tag-relevant-user.user.js)
 
