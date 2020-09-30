@@ -15,3 +15,5 @@ When writing a comment in an issue or in a pull request, automatically insert a 
 [Source](https://github.com/colingrodecoeur360/userscripts/blob/master/create-pr-from-other-branches.user.js) | [Direct install](https://raw.githubusercontent.com/colingrodecoeur360/userscripts/master/create-pr-from-other-branches.user.js)
 
 On the branches page (`.../branches/all`), add buttons to create a PR based on other branches than the repo's main branch.
+
+<img src="https://user-images.githubusercontent.com/51365591/94721773-9f52b300-0356-11eb-9152-7ab13b160470.png" width="400">
