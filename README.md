@@ -23,5 +23,12 @@ On the branches page (`.../branches/all`), add buttons to create a PR based on o
 [Source](https://github.com/colingrodecoeur360/userscripts/blob/master/add-reviewers-faster.user.js) | [Direct install](https://raw.githubusercontent.com/colingrodecoeur360/userscripts/master/add-reviewers-faster.user.js)
 
 When creating a PR, display a button to add a set of predefined users as reviewers all at once.
+To get started, add your reviewers' Github usernames in the config section:
+
+```js
+const CONFIG = {
+    REVIEWERS: ["alice", "bob"]
+};
+```
 
 <img src="https://user-images.githubusercontent.com/51365591/97641560-769c0700-1a43-11eb-88a0-d6e413327854.png" width="400">
