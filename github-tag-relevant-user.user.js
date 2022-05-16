@@ -12,7 +12,8 @@
 const CONFIG = {
     TAG_USER_IN_COMMENT_REPLY: true,
     TAG_USER_IN_THREAD_STARTER: true,
-    TAG_USER_IN_NEW_COMMENT: true
+    TAG_USER_IN_NEW_COMMENT: true,
+    TAG_USER_IN_PULL_REQUEST_REVIEW: true
 };
 
 (function () {
@@ -29,6 +30,8 @@ async function tagRelevantUser(event) {
         tagUserInThreadStarter(element);
     } else if (CONFIG.TAG_USER_IN_NEW_COMMENT && isNewCommentField(element)) {
         tagUserInNewCommentField(element);
+    } else if (CONFIG.TAG_USER_IN_PULL_REQUEST_REVIEW && isPullRequestReview(element)) {
+        tagUserInPullRequestReview(element);
     }
 
     async function waitForTextarea() {
@@ -49,6 +52,11 @@ function isThreadStarter(element) {
 function isNewCommentField(element) {
     return element && element.id === "new_comment_field";
 }
+function isPullRequestReview(element) {
+    if (! element) { return false; }
+    const reviewModal = element.closest("#review-changes-modal");
+    return reviewModal && reviewModal.open;
+}
 function tagUserInReply(element) {
     const context = element.closest(".review-thread-reply");
     const textarea = context.querySelector(".comment-form-textarea");
@@ -63,6 +71,10 @@ function tagUserInThreadStarter(element) {
 function tagUserInNewCommentField(element) {
     tagUser(element, getAuthorUsername());
 }
+function tagUserInPullRequestReview(element) {
+    const textarea = document.querySelector("#pull_request_review_body");
+    tagUser(textarea, getAuthorUsername());
+}
 function getAuthorUsername() {
     const issueOrPullRequestAuthor = document.querySelector(".gh-header-meta .author");
     if (issueOrPullRequestAuthor) { return issueOrPullRequestAuthor.textContent; }
@@ -73,6 +85,7 @@ function getAuthorUsername() {
 function tagUser(textarea, username) {
     if (! username || username === getLoggedInUsername()) { return; }
     if (textarea && textarea.value.length === 0) {
+        textarea.focus();
         textarea.value = `@${username} `;
         textarea.selectionStart = textarea.selectionEnd = textarea.value.length;
     }
