@@ -85,6 +85,7 @@ function getAuthorUsername() {
 function tagUser(textarea, username) {
     if (! username || username === getLoggedInUsername()) { return; }
     if (textarea && textarea.value.length === 0) {
+        textarea.focus();
         textarea.value = `@${username} `;
         textarea.selectionStart = textarea.selectionEnd = textarea.value.length;
     }
