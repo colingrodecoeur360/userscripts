@@ -2,9 +2,9 @@
 // @name Github Tag Relevant User
 // @version 0.1
 // @description Tag the most relevant user in the context when writing a comment on Github
-// @include https://github.com/*/*/pull/*
-// @include https://github.com/*/*/commit/*
-// @include https://github.com/*/*/issues/*
+// @match https://github.com/*/*/pull/*
+// @match https://github.com/*/*/commit/*
+// @match https://github.com/*/*/issues/*
 // @downloadURL https://raw.githubusercontent.com/colingrodecoeur360/userscripts/master/github-tag-relevant-user.user.js
 // @updateURL https://raw.githubusercontent.com/colingrodecoeur360/userscripts/master/github-tag-relevant-user.user.js
 // ==/UserScript==
